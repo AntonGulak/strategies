@@ -67,14 +67,3 @@ yarn compile
 An ABI and bytecode will be generated as the result of command execution. See
 `artifacts/contracts/` directory.
 
-## Testing
-
-All contracts are covered with unit tests.
-
-To run tests execute the next command in your command line (terminal):
-
-```bash
-yarn test
-```
-
-Before testing update your `.env` file like in `.env.example`.
