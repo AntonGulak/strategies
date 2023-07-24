@@ -12,7 +12,7 @@ import "../interfaces/IStrategy.sol";
 
 error OnlyContractAddress();
 
-contract StrategiesRootUpgradeable is
+contract StrategyMockUpgradeable is
     IStrategy,
     OwnableUpgradeable,
     ReentrancyGuardUpgradeable

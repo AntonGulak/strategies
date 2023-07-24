@@ -1,0 +1,219 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xCc4433F295909E0A07BE5F816B092F91f83D5e94",
+    "txHash": "0xda399b4586015729c39afb9a155024782c4db1a1e09b6bcc1ad8f7224bef3c96"
+  },
+  "proxies": [
+    {
+      "address": "0xaa38Fe096EdEAfd92ea693010931Ef63df53D3ac",
+      "txHash": "0xf53af49033af8093e60650f594f0d871a37b78b896db83d0d56d6a9cb9a8c1c5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xe07a8Af4895222c206e1f9917470eD6592e79B1c",
+      "txHash": "0x2784764f54ffa23835569983919232d834c2fb4f586621481762ed4825e6db86",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "b8c2690bf36d4f8a009e3c42ac7e2cd248428508c0ee6e7524535ec05b0590c9": {
+      "address": "0xB2522f5fF03dd777604fcdDd58b666828626BC5E",
+      "txHash": "0xcd74f3f104d736717ab1c7d1fea99eb3be8b78508e2aed6af8c5864109574f2a",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\security\\ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "strategiesCount",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_uint256",
+            "contract": "StrategiesRootUpgradeable",
+            "src": "contracts\\StrategiesRootUpgradeable.sol:56"
+          },
+          {
+            "label": "strategyToId",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StrategiesRootUpgradeable",
+            "src": "contracts\\StrategiesRootUpgradeable.sol:58"
+          },
+          {
+            "label": "strategies",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_mapping(t_uint256,t_struct(Strategy)1787_storage)",
+            "contract": "StrategiesRootUpgradeable",
+            "src": "contracts\\StrategiesRootUpgradeable.sol:59"
+          },
+          {
+            "label": "positions",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Position)1792_storage))",
+            "contract": "StrategiesRootUpgradeable",
+            "src": "contracts\\StrategiesRootUpgradeable.sol:61"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Position)1792_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct StrategiesRootUpgradeable.Position))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Position)1792_storage)": {
+            "label": "mapping(uint256 => struct StrategiesRootUpgradeable.Position)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Strategy)1787_storage)": {
+            "label": "mapping(uint256 => struct StrategiesRootUpgradeable.Strategy)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Position)1792_storage": {
+            "label": "struct StrategiesRootUpgradeable.Position",
+            "members": [
+              {
+                "label": "shares",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "deposited",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Strategy)1787_storage": {
+            "label": "struct StrategiesRootUpgradeable.Strategy",
+            "members": [
+              {
+                "label": "totalStaked",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "totalShares",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "strategy",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastCompoundTimestamp",
+                "type": "t_uint64",
+                "offset": 20,
+                "slot": "2"
+              },
+              {
+                "label": "isActive",
+                "type": "t_bool",
+                "offset": 28,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
