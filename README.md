@@ -14,7 +14,8 @@ The system empowers users by giving them control over certain parameters. Users 
 
 The Decentralized Finance Smart Contract System offers a flexible and extensible architecture, making it adaptable to integrate with any other decentralized exchange (DEX) or DeFi protocol. This versatility allows developers to create a wide array of DeFi applications while providing users with a seamless and personalized DeFi experience.
 
-![tests_strategies](https://github.com/AntonGulak/strategies/assets/55970327/5a850e6e-af9d-4ac4-987e-ca74d47f0d8f)
+
+![tests_strategies](https://github.com/AntonGulak/strategies/assets/55970327/912b7f63-a287-445d-9103-8c8ff9d057a2)
 
 
 ## Dependencies installation
