@@ -121,32 +121,38 @@ contract StrategiesRootUpgradeable is
     }
 
     function deposit(
-        IStrategy.DepositParams memory params
-    )
-        external
-        nonReentrant
-        onlyExistingStrategy(params.strategyId)
-        isStrategyActive(params.strategyId)
-    {
-        if (params.amount > 0) {
-            uint256 deposited = IStrategy(
-                strategies[params.strategyId].strategy
-            ).deposit(params, _msgSender());
+        IStrategy.DepositParams[] memory params
+    ) external nonReentrant {
+        for (uint256 i = 0; i < params.length; ++i) {
+            IStrategy.DepositParams memory param = params[i];
 
-            _deposit(params.strategyId, deposited);
+            if (param.amount > 0) {
+                _onlyExistingStrategy(param.strategyId);
+                _isStrategyActive(param.strategyId);
+
+                uint256 deposited = IStrategy(
+                    strategies[param.strategyId].strategy
+                ).deposit(param, _msgSender());
+
+                _deposit(param.strategyId, deposited);
+            }
         }
     }
 
     function withdraw(
-        IStrategy.WithdrawParams memory params
+        IStrategy.WithdrawParams[] memory params
     ) external nonReentrant {
-        if (params.amount > 0) {
-            params.amount = _withdraw(params.strategyId, params.amount);
+        for (uint256 i = 0; i < params.length; ++i) {
+            IStrategy.WithdrawParams memory param = params[i];
 
-            IStrategy(strategies[params.strategyId].strategy).withdraw(
-                params,
-                _msgSender()
-            );
+            if (param.amount > 0) {
+                param.amount = _withdraw(param.strategyId, param.amount);
+
+                IStrategy(strategies[param.strategyId].strategy).withdraw(
+                    param,
+                    _msgSender()
+                );
+            }
         }
     }
 

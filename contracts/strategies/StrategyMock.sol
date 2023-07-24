@@ -22,6 +22,10 @@ contract StrategiesRootUpgradeable is
     address public tokenToStaking;
     address public swapHelper;
 
+    //MOCK
+    uint256 public depositReturn;
+    uint256 public compoundReturn;
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
@@ -64,15 +68,12 @@ contract StrategiesRootUpgradeable is
             params.data[2]
         );
 
-        uint256 amountTokenForStaking = abi.decode(
-            _delegateCall(swapHelper, data),
-            (uint256)
-        );
+        abi.decode(_delegateCall(swapHelper, data), (uint256));
 
         //TODO: additional swaps, checks, adding liquidity staking and else
         //TODO: IStaking(stakingAddress).stake(amountTokenForStaking);
 
-        return amountTokenForStaking;
+        return depositReturn;
     }
 
     function withdraw(
@@ -91,7 +92,17 @@ contract StrategiesRootUpgradeable is
         //TODO: swap for strategy tokens, adding liquidity
         //TODO: stake new lp tokens
 
-        return 0;
+        return compoundReturn;
+    }
+
+    //Just for test, no modifiers
+    function setDepositReturn(uint256 amount) external {
+        depositReturn = amount;
+    }
+
+    //Just for test, no modifiers
+    function setCompoundReturn(uint256 amount) external {
+        compoundReturn = amount;
     }
 
     /**

@@ -15,19 +15,16 @@ dotenv.config();
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
+
   networks: {
-    hardhat: {
-      forking: {
-        url: `${process.env.ARBITRUM_MAINNET_RPC}${process.env.ALCHEMY_KEY_ARB}`,
-        blockNumber: Number(process.env.ARB_BLOCK_NUMBER),
-      },
-      chainId: 42161,
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    hardhat: {},
   },
   etherscan: {
-    apiKey: {
-      arbitrumOne: (process.env.ARBISCAN_API_KEY || "").trim(),
-    },
+    apiKey: `${process.env.ETHERSCAN_KEY}`,
   },
   solidity: {
     compilers: [

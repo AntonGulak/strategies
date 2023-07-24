@@ -14,9 +14,22 @@ The system empowers users by giving them control over certain parameters. Users 
 
 The Decentralized Finance Smart Contract System offers a flexible and extensible architecture, making it adaptable to integrate with any other decentralized exchange (DEX) or DeFi protocol. This versatility allows developers to create a wide array of DeFi applications while providing users with a seamless and personalized DeFi experience.
 
-
 ![tests_strategies](https://github.com/AntonGulak/strategies/assets/55970327/912b7f63-a287-445d-9103-8c8ff9d057a2)
 
+## Requirements
+
+- The treasury smart contract should be able to receive USDC or any other stable coin
+  Requirement fulfilled, I can accept any stablecoin or ERC-20 token for deposit.
+
+- The funds (eg:USDC) are to be distributed among the different protocols and swapped for either USDT or DAI (in case of a liquidity pool).
+  Each strategy will implement its own swapping logic to achieve the desired outcomes. Additionally, every user will have the option to choose an Automated Market Maker (AMM) and set the maximum allowable slippage for their exchanges.
+
+- The ratio of these funds to be distributed can be set in the smart contract by the owner of the smart contract and can be changed dynamically after the deployment to the test/mainnet chains.
+  Hardcoding the allocation proportions is not practical as it significantly limits the functionality of our service and prevents users from customizing portfolio diversification. Instead, we anticipate that the primary interaction will occur through the frontend, allowing users to independently configure their portfolio distribution. By default or based on user settings, the frontend will divide the deposit into required segments as needed.
+- The contract should be able to withdraw the funds in the liquidity pools or DeFi protocols fully or partially.
+  The shares logic on Parallax enables operations based on liquidity provider token formulas, making both partial and complete asset withdrawals available. Additionally, users will have the flexibility to perform swaps to the chosen token or any other logic, as each strategy will have its own contract, allowing for diverse and customized functionalities
+- We should be able to calculate the aggregated percentage yield of all the protocols.
+  By calculating the APY for each strategy and the overall Total Value Locked (TVL) per user or across all users, we will be able to determine these values on the backend/frontend.
 
 ## Dependencies installation
 
